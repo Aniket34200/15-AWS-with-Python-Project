@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node App</title>
+</head>
+<body>
+
+    <h1>Node.js Web Application</h1>
+    <button onclick="getMessage()">Get Message</button>
+
+    <p id="output"></p>
+
+    <script>
+        async function getMessage() {
+            const res = await fetch('/api/message');
+            const data = await res.json();
+            document.getElementById('output').innerText = data.message;
+        }
+    </script>
+
+</body>
+</html>
